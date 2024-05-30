@@ -1,0 +1,27 @@
+# permissions for end users to view examples.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: example-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: controller-runtime-playground
+    app.kubernetes.io/part-of: controller-runtime-playground
+    app.kubernetes.io/managed-by: kustomize
+  name: example-viewer-role
+rules:
+- apiGroups:
+  - maruina.xyz.maruina.xyz
+  resources:
+  - examples
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - maruina.xyz.maruina.xyz
+  resources:
+  - examples/status
+  verbs:
+  - get

@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - maruina.xyz.maruina.xyz
+  resources:
+  - examples
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - maruina.xyz.maruina.xyz
+  resources:
+  - examples/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - maruina.xyz.maruina.xyz
+  resources:
+  - examples/status
+  verbs:
+  - get
+  - patch
+  - update

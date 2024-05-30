@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- maruina.xyz_v1alpha1_example.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
